@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 struct DSU {
     DSU(int n_) : n(n_ + 1) {
         f.resize(n);
@@ -11,7 +10,16 @@ struct DSU {
 
     bool test(int x, int y) { return find(x) == find(y); }
 
-    void connect(int x, int y) { f[find(x)] = find(y); }
+    bool connect(int x, int y) {
+        x = find(x);
+        y = find(y);
+        if (x == y) {
+            return false;
+        } else {
+            f[find(x)] = find(y);
+            return true;
+        }
+    }
     int n;
     vector<int> f;
 };
