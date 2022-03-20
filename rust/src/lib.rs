@@ -9,3 +9,4 @@ mod tests {
 
 pub mod data_structure;
 pub mod dp;
+pub mod misc;
