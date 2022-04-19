@@ -2,10 +2,12 @@
 using namespace std;
 
 struct SegmentTree {
+    const int INF = 1e9;
     SegmentTree(int n) : n(n) {
         nn = 1;
         while (nn < n) nn <<= 1;
-        dat = vector<int>(2 * nn + 2, 0);
+        dat = vector<int>(2 * nn + 2, -INF);
+        for (int i = nn - 1; i >= 1; --i) pu(i);
     }
 
     void pu(int rt) { dat[rt] = max(dat[rt << 1], dat[rt << 1 | 1]); }
@@ -14,7 +16,7 @@ struct SegmentTree {
 
     void u(int i, int x) {
         i += nn - 1;
-        dat[i] = x;
+        dat[i] = max(dat[i], x);
         while (i > 1) {
             pu(i >> 1);
             i >>= 1;
@@ -27,7 +29,7 @@ struct SegmentTree {
         }
 
         int m = (l + r) >> 1;
-        int v = -1;
+        int v = -INF;
         if (L <= m) {
             v = max(v, q(l, m, rt << 1));
         }
@@ -39,6 +41,9 @@ struct SegmentTree {
     }
 
     int q(int l, int r) {
+        if (l > r) {
+            return -INF;
+        }
         L = l;
         R = r;
         return q(1, nn, 1);
