@@ -16,7 +16,7 @@ struct FenwickTree {
     T sum(int i) {
         T res = 0;
         for (; i; i -= lowbit(i)) {
-            res += i;
+            res += dat[i];
         }
         return res;
     }
