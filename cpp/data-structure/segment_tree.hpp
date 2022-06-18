@@ -140,5 +140,3 @@ struct SegmentTreeLazy {
         return q(1, nn, 1);
     }
 };
-}
-;
