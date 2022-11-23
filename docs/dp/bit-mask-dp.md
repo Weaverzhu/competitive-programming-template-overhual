@@ -9,7 +9,7 @@ $$
 
 If we know all $f(s)$, we can calculate any set of $s$, which is $S$ in $O(2^n)$ of both space complexity and time complexity.
 
-See [rust code](../../rust/src/dp/sum_over_subset.rs)
+See [rust code](../../rust/src/dp/bitmask_dp.rs)
 
 ### Odd-Negation transform
 
