@@ -1,5 +1,5 @@
 struct SegmentTree<T: Ord + Copy> {
-    data: Vec<(T, usize)>,
+    data: Vec<(T, usize)>, // 0-indexed
     n: usize,
     nn: usize,
     def: T,
@@ -11,7 +11,7 @@ impl<T: Ord + Copy> SegmentTree<T> {
     fn cmp<'a>(lhs: &'a T, rhs: &'a T) -> &'a T {
         std::cmp::max(lhs, rhs)
     }
-
+    // a is 0-indexed
     fn new(a: &Vec<T>, def: T) -> Self {
         let n = a.len();
         let mut r = SegmentTree {

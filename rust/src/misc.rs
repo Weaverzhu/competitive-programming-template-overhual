@@ -1,6 +1,6 @@
 pub mod io;
 
-fn bin(mut a: u64, mut b: u64, p: u64) -> u64 {
+pub fn bin(mut a: u64, mut b: u64, p: u64) -> u64 {
     let mut r = 1;
     while b > 0 {
         if b & 1 == 1 {

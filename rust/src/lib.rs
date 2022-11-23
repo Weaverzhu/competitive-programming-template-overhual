@@ -10,4 +10,5 @@ mod tests {
 pub mod data_structure;
 pub mod dp;
 pub mod graph;
+pub mod math;
 pub mod misc;
