@@ -1,5 +1,5 @@
 const MOD: u64 = 1_000_000_007;
-struct PreCalc {
+pub struct PreCalc {
     f: Vec<u64>,
     invf: Vec<u64>,
 }
