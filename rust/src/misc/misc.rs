@@ -1,5 +1,3 @@
-pub mod io;
-
 pub fn bin(mut a: u64, mut b: u64, p: u64) -> u64 {
     let mut r = 1;
     while b > 0 {
@@ -14,7 +12,7 @@ pub fn bin(mut a: u64, mut b: u64, p: u64) -> u64 {
 
 fn gcd(mut a: u64, mut b: u64) -> u64 {
     while b > 0 {
-        let mut c = a % b;
+        let c = a % b;
         a = b;
         b = c;
     }

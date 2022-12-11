@@ -4,7 +4,7 @@ pub struct PreCalc {
     invf: Vec<u64>,
 }
 
-use crate::misc::bin;
+use crate::misc::misc::bin;
 
 impl PreCalc {
     fn new(n: usize) -> Self {
@@ -24,7 +24,7 @@ impl PreCalc {
         r
     }
 
-    fn C(&self, n: usize, k: usize) -> u64 {
+    fn binom(&self, n: usize, k: usize) -> u64 {
         if n < k {
             return 0;
         }
