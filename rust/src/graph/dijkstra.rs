@@ -1,23 +1,7 @@
-type T = i64;
-struct WeightedGraph {
-    g: Vec<Vec<(usize, T)>>,
-}
-
-impl WeightedGraph {
-    fn new(n: usize) -> Self {
-        WeightedGraph { g: vec![vec![]; n] }
-    }
-
-    fn init_edges(&mut self, e: &Vec<(usize, usize, T, bool)>) {
-        let g = &mut self.g;
-        for &(u, v, w, undirected) in e.iter() {
-            g[u].push((v, w));
-            if undirected {
-                g[v].push((u, w));
-            }
-        }
-    }
-}
+use super::{WeightedGraph, T};
+use std::cell::*;
+use std::collections::*;
+use std::rc::*;
 
 struct Dijkstra {
     g: Rc<RefCell<WeightedGraph>>,
